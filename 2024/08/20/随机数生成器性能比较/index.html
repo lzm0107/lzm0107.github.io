@@ -27,7 +27,7 @@
 <meta property="og:description" content="今天看到一个帖子求随机数用法，看到回复都在使用 rand()，就突发奇想来比较一下 rand() 与 mt19937 的性能。 测试环境 测试于虚拟机中进行。  虚拟机软件：VMware Workstation 17 Pro 操作系统：Ubuntu 24.04 LTS 编译器：GCC 13.2.0 编译命令：g++ .&#x2F;Code.cpp -std&#x3D;c++14 -O2 -stati">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-08-20T09:39:55.000Z">
-<meta property="article:modified_time" content="2024-08-20T09:39:56.963Z">
+<meta property="article:modified_time" content="2024-08-28T12:03:12.999Z">
 <meta property="article:author" content="lzm0107">
 <meta name="twitter:card" content="summary">
 
@@ -194,9 +194,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2024-08-20 17:39:55 / 修改时间：17:39:56" itemprop="dateCreated datePublished" datetime="2024-08-20T17:39:55+08:00">2024-08-20</time>
+      <time title="创建时间：2024-08-20 17:39:55" itemprop="dateCreated datePublished" datetime="2024-08-20T17:39:55+08:00">2024-08-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-08-28 20:03:12" itemprop="dateModified" datetime="2024-08-28T20:03:12+08:00">2024-08-28</time>
     </span>
 
   
@@ -259,7 +265,7 @@ class="math inline">\(10^7\)</span> 的异或和</h3>
 <p>第二次：<code>10000000 9048101</code></p>
 <p>第三次：<code>10000000 8922749</code></p>
 <h2 id="测试总结">测试总结</h2>
-<p><code>总结：别用 `rand()` 了（</code></p>
+<p>总结：别用 <code>rand()</code> 了（</p>
 
     </div>
 
