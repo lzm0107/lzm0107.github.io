@@ -125,7 +125,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -151,6 +151,108 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://lzm0107.github.io/2024/08/29/VSCode%E9%85%8D%E7%BD%AE%E7%BC%96%E8%AF%91%E8%BF%90%E8%A1%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.webp">
+      <meta itemprop="name" content="lzm0107">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lzm0107 的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | lzm0107 的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/08/29/VSCode%E9%85%8D%E7%BD%AE%E7%BC%96%E8%AF%91%E8%BF%90%E8%A1%8C/" class="post-title-link" itemprop="url">VSCode配置编译运行</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2024-08-29 09:58:29 / 修改时间：10:00:56" itemprop="dateCreated datePublished" datetime="2024-08-29T09:58:29+08:00">2024-08-29</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>VSCode
+作为一个轻量化的代码编辑器，十分适合竞赛代码的编写，但其仍有一些缺陷。例如，每次按下
+F5，VSCode
+便会进行一次编译，在需要测试多组样例时，这样的重复编译会带来一定的迟钝感。相比之下，在小熊猫
+C++ 中测试样例，只有第一次按下 F11 时会进行编译，第二次按下 F11
+时则会直接运行，十分方便。</p>
+<p><del>但是如果我就是想要在 VSCode 里实现这样的效果呢？</del></p>
+<p>由于 VSCode 中 C/C++
+插件的运行功能本身就带有一定的迟钝感，所以我安装了 Code Runner
+插件来实现这样的效果。</p>
+<p>首先，安装 Code Runner 并打开扩展设置。</p>
+<p><img src="/images/RjPqZ5vFTjPwg8RF.png" /></p>
+<p>打开 Executor Map 一项。</p>
+<p><img src="/images/76oObUSmXOzoKzFS.png" /></p>
+<p>可以看到 Code Runner 对于 C++ 的设置为
+<code>"cpp": "cd $dir &amp;&amp; g++ $fileName -o $fileNameWithoutExt &amp;&amp; $dir$fileNameWithoutExt",</code>
+先把这个东西注释掉，我们需要编写一个程序实现避免重复编译的效果。</p>
+<p>在随便哪个地方新建个文件夹，添加进系统环境变量
+Path，在文件夹底下新建一个 C++
+文件，<del>自己写一个</del>或者复制以下代码。</p>
+<details class="note default"><summary><p>Code</p>
+</summary>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span>* argv[])</span></span>&#123;</span><br><span class="line">	string path = argv[<span class="number">1</span>], name1 = argv[<span class="number">2</span>], name2 = argv[<span class="number">3</span>];</span><br><span class="line">	<span class="keyword">if</span>(path[<span class="number">0</span>] == <span class="string">&#x27;&quot;&#x27;</span>) path = path.<span class="built_in">substr</span>(<span class="number">1</span>, path.<span class="built_in">size</span>() - <span class="number">2</span>);</span><br><span class="line">	<span class="function">filesystem::path <span class="title">path1</span><span class="params">(path + name1)</span>, <span class="title">path2</span><span class="params">(path + name2)</span></span>;</span><br><span class="line">	<span class="keyword">if</span>(!filesystem::<span class="built_in">exists</span>(path1))&#123;</span><br><span class="line">		cerr &lt;&lt; <span class="string">&quot;Error 1&quot;</span> &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(!filesystem::<span class="built_in">exists</span>(path2))&#123;</span><br><span class="line">		<span class="built_in">system</span>((<span class="string">&quot;g++ &quot;</span> + path + name1 + <span class="string">&quot; -o &quot;</span> + path + name2).<span class="built_in">c_str</span>());</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">auto</span> time1 = filesystem::<span class="built_in">last_write_time</span>(path1);</span><br><span class="line">	<span class="keyword">auto</span> time2 = filesystem::<span class="built_in">last_write_time</span>(path2);</span><br><span class="line">	<span class="keyword">if</span>(time1 &gt; time2)&#123;</span><br><span class="line">		<span class="built_in">system</span>((<span class="string">&quot;g++ &quot;</span> + path + name1 + <span class="string">&quot; -o &quot;</span> + path + name2).<span class="built_in">c_str</span>());</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</details>
+<p>这个程序接收三个参数，通过判断代码与编译后文件的最后修改时间避免了重复的编译。</p>
+<p>当然，程序写好了总要编译吧，但是这个用来编译代码的程序还没有编译，我们就不能用它来编译它自己。所以在目录中打开终端，假设文件名为
+<code>task1.cpp</code>，输入
+<code>g++ .\task1.cpp -o .\task1.exe</code></p>
+<p>然后在 Code Runner 的插件设置中加入
+<code>"cpp": "cd $dir &amp;&amp; task1.exe $dir $fileName $fileNameWithoutExt.exe &amp;&amp; $dir$fileNameWithoutExt",</code></p>
+<p>现在在 VSCode 中打开另一个 C++ 文件，按下
+Ctrl+Alt+N，就会自动编译运行。再按一次就会直接运行了。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
