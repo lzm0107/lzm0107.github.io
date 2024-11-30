@@ -125,7 +125,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -151,6 +151,128 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lzm0107.github.io/2024/11/30/NOIP2024%E6%B8%B8%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="lzm0107">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lzm0107 的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | lzm0107 的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/11/30/NOIP2024%E6%B8%B8%E8%AE%B0/" class="post-title-link" itemprop="url">NOIP 2024 游记</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2024-11-30 21:04:35 / 修改时间：22:15:11" itemprop="dateCreated datePublished" datetime="2024-11-30T21:04:35+08:00">2024-11-30</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="day-0-11.29">Day 0 (11.29)</h3>
+<p>上午复习了三个 tarjan。</p>
+<p>下午试机，听洛谷讨论区说 CCF 评测机跑 <span class="math inline">\(2
+\times 10^3\)</span> 的 ULL 自然溢出 Floyd 需要
+5s，在考场的电脑上试了一下，12s，另外还试了在 qingyu 博客看到的
+<code>-fsanitize=address,undefined</code> 和
+<code>ulimit -v</code>，本来还想试一下对拍的，但是没打完就回去了。</p>
+<p>晚上完全不知道干啥。</p>
+<h3 id="day-1">Day 1</h3>
+<p>进考场，和 CSP 一样还是开着 Windows，等极域发了密码我就赶紧重启成
+Linux 了。前十分钟先开 VSC 敲了个缺省源。</p>
+<p>读 A，发现自己好像不太会，于是边写边想，第 70min
+写完，结果调不出来。于是直接重写，第 90min 过大样例。</p>
+<p>然后开 B，一眼看出 <span class="math inline">\(d_j\)</span>
+不影响答案，也就是如果 <span class="math inline">\(j\)</span> 是 <span
+class="math inline">\(i\)</span> 下一个赋值的，那么有两种情况。</p>
+<ol type="1">
+<li><p>从 <span class="math inline">\(i\)</span> 开始的限制最后传到了
+<span class="math inline">\(j\)</span>，显然有 <span
+class="math inline">\(v^{j-i}\)</span> 种方案，其中 <span
+class="math inline">\(\frac{1}{v}\)</span> 的方案（即 <span
+class="math inline">\(x_{j-1} = a_j\)</span> 的方案）是合法的。</p></li>
+<li><p>从 <span class="math inline">\(i\)</span> 开始的限制最后没传到
+<span class="math inline">\(j\)</span>，有 <span
+class="math inline">\(v^{2j-2i}-v^{j-i}\)</span> 种，全部合法。</p></li>
+</ol>
+<p>将每段的合法方案数相乘，再特殊处理首尾两端，需要注意 <span
+class="math inline">\(c_j\)</span> 相同的情况。</p>
+<p>在草稿纸上写完上面这些直接开写，140min 左右过大样例。</p>
+<p>C 题先写了一个 <span class="math inline">\(k=1\)</span> 的
+24pts，大概就是在很多个完全子图里任选一条钦定了一段的链，方案数为 <span
+class="math inline">\(\prod\limits_{i=1}^n (deg_i - 1)!\)</span>，第
+174min 写完。</p>
+<p>写完 C 的 24pts，决定先看看 D，发现求 LCA
+是可重复贡献的，而且满足结合律，用两个 ST 表写了 <span
+class="math inline">\(n\le 5000\)</span> 的部分。回去看
+C，观察第九个样例（一条链）发现全是
+<code>1</code>，第十个样例（菊花图）的式子也很好推，于是喜提 16pts。</p>
+<p>再看看 D，感觉自己的双 ST 也可以做 <span
+class="math inline">\(k=r-l+1\)</span>，花五分钟改了一下。链的 32pts
+脑子过载，一眼没看出来就没想了。时间只剩半小时，开始检查，发现自己 D
+没写 <code>freopen</code>，赶紧加上。最后十分钟切回
+Windows，等待结束收代码。</p>
+<p>此时估分应当为 <span
+class="math inline">\(100+100+40+32=272\)</span>，但由于我看错了 C
+部分分的测试点个数，所以以为自己是 <span
+class="math inline">\(100+100+44+32=276\)</span>。</p>
+<p>比赛结束，然后别的考场十分钟收完，我们考场收了半个小时（？</p>
+<p>赛后才发现 D 链的 32pts 非常好拿，不过我也拼了个 32，感觉还行吧。</p>
+<h3 id="感受">感受</h3>
+<p>感觉这场自己打得比较保守，比如最后半小时没去冲链的
+32pts。但是再想想，就算写出来也可能忘记 <code>freopen</code>。</p>
+<p>另外，<code>-fsanitize=address,undefined</code> 好用！</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -196,7 +318,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-11-06 23:44:24" itemprop="dateModified" datetime="2024-11-06T23:44:24+08:00">2024-11-06</time>
+      <time title="修改时间：2024-11-30 22:14:04" itemprop="dateModified" datetime="2024-11-30T22:14:04+08:00">2024-11-30</time>
     </span>
 
   
