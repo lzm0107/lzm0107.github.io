@@ -19,12 +19,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"lzm0107.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.23.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="今天看到一个帖子求随机数用法，看到回复都在使用 rand()，就突发奇想来比较一下 rand() 与 mt19937 的性能。 测试环境 测试于虚拟机中进行。  虚拟机软件：VMware Workstation 17 Pro 操作系统：Ubuntu 24.04 LTS 编译器：GCC 13.2.0 编译命令：g++ .&#x2F;Code.cpp -std&#x3D;c++14 -O2 -stati">
+    <meta name="description" content="今天看到一个帖子求随机数用法，看到回复都在使用 rand()，就突发奇想来比较一下 rand() 与 mt19937 的性能。 测试环境 测试于虚拟机中进行。  虚拟机软件：VMware Workstation 17 Pro 操作系统：Ubuntu 24.04 LTS 编译器：GCC 13.2.0 编译命令：g++ .&#x2F;Code.cpp -std&#x3D;c++14 -O2 -static -o .&#x2F;Co">
 <meta property="og:type" content="article">
 <meta property="og:title" content="随机数生成器性能比较">
 <meta property="og:url" content="https://lzm0107.github.io/2024/08/20/%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%94%9F%E6%88%90%E5%99%A8%E6%80%A7%E8%83%BD%E6%AF%94%E8%BE%83/index.html">
 <meta property="og:site_name" content="lzm0107 的博客">
-<meta property="og:description" content="今天看到一个帖子求随机数用法，看到回复都在使用 rand()，就突发奇想来比较一下 rand() 与 mt19937 的性能。 测试环境 测试于虚拟机中进行。  虚拟机软件：VMware Workstation 17 Pro 操作系统：Ubuntu 24.04 LTS 编译器：GCC 13.2.0 编译命令：g++ .&#x2F;Code.cpp -std&#x3D;c++14 -O2 -stati">
+<meta property="og:description" content="今天看到一个帖子求随机数用法，看到回复都在使用 rand()，就突发奇想来比较一下 rand() 与 mt19937 的性能。 测试环境 测试于虚拟机中进行。  虚拟机软件：VMware Workstation 17 Pro 操作系统：Ubuntu 24.04 LTS 编译器：GCC 13.2.0 编译命令：g++ .&#x2F;Code.cpp -std&#x3D;c++14 -O2 -static -o .&#x2F;Co">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-08-20T09:39:55.000Z">
 <meta property="article:modified_time" content="2024-08-30T08:17:36.000Z">
