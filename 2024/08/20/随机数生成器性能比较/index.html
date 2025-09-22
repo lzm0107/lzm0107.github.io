@@ -74,11 +74,7 @@
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
-<!-- hexo injector head_end start -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --></head>
+</head>
 
 <body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
   <div class="headband"></div>
@@ -137,7 +133,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83"><span class="nav-number">1.</span> <span class="nav-text">测试环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">测试方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C"><span class="nav-number">3.</span> <span class="nav-text">测试结果</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#rand"><span class="nav-number">3.1.</span> <span class="nav-text">rand()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mt19937"><span class="nav-number">3.2.</span> <span class="nav-text">mt19937</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%B0-107-%E7%9A%84%E5%BC%82%E6%88%96%E5%92%8C"><span class="nav-number">3.3.</span> <span class="nav-text">1 到 107 的异或和</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E6%80%BB%E7%BB%93"><span class="nav-number">4.</span> <span class="nav-text">测试总结</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83"><span class="nav-number">1.</span> <span class="nav-text">测试环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">测试方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C"><span class="nav-number">3.</span> <span class="nav-text">测试结果</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#rand"><span class="nav-number">3.1.</span> <span class="nav-text">rand()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mt19937"><span class="nav-number">3.2.</span> <span class="nav-text">mt19937</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%B0-107-%E7%9A%84%E5%BC%82%E6%88%96%E5%92%8C"><span class="nav-number">3.3.</span> <span class="nav-text">\(1\) 到 \(10^7\) 的异或和</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E6%80%BB%E7%BB%93"><span class="nav-number">4.</span> <span class="nav-text">测试总结</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -251,10 +247,10 @@
 </ul>
 <h2 id="测试方法">测试方法</h2>
 <p>使用 <code>rand()</code> 和 <code>mt19937</code> 分别生成 <span
-class="math inline">10<sup>7</sup></span>
+class="math inline">\(10^7\)</span>
 个随机数、计算异或和并记录使用时间。另外还记录了计算 <span
-class="math inline">1</span> 到 <span
-class="math inline">10<sup>7</sup></span>
+class="math inline">\(1\)</span> 到 <span
+class="math inline">\(10^7\)</span>
 的异或和的程序所用时间。为避免误差，测试进行三次。</p>
 <h2 id="测试结果">测试结果</h2>
 <p>注：每次测试结果的第一个数是计算出的异或和，第二个数是运行时间。</p>
@@ -276,8 +272,8 @@ class="math inline">10<sup>7</sup></span>
 <p>第一次：<code>-1197154284 54221094</code></p>
 <p>第二次：<code>1446003541 51768240</code></p>
 <p>第三次：<code>-528284598 50928197</code></p>
-<h3 id="到-107-的异或和"><span class="math inline">1</span> 到 <span
-class="math inline">10<sup>7</sup></span> 的异或和</h3>
+<h3 id="到-107-的异或和"><span class="math inline">\(1\)</span> 到 <span
+class="math inline">\(10^7\)</span> 的异或和</h3>
 <details class="note default"><summary><p>Code</p>
 </summary>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> sttime, edtime, ans;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	sttime = chrono::system_clock::<span class="built_in">now</span>().<span class="built_in">time_since_epoch</span>().<span class="built_in">count</span>();</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">10000000</span>; i ++ ) ans ^= i;</span><br><span class="line">	edtime = chrono::system_clock::<span class="built_in">now</span>().<span class="built_in">time_since_epoch</span>().<span class="built_in">count</span>();</span><br><span class="line">	cout &lt;&lt; ans &lt;&lt; <span class="string">&#x27; &#x27;</span> &lt;&lt; edtime - sttime &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>

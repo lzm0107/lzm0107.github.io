@@ -74,11 +74,7 @@
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
-<!-- hexo injector head_end start -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --></head>
+</head>
 
 <body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
   <div class="headband"></div>
@@ -255,57 +251,51 @@ U 盘了。</p>
 <h3 id="day-1">Day 1</h3>
 <p>空调开到 22 度，睡眠质量显著提高。</p>
 <p>入场，发现发了好多好吃的。</p>
-<p>前 4h 打了 <span class="math inline">78 + 22 + 16</span>，后 1h
+<p>前 4h 打了 <span class="math inline">\(78+22+16\)</span>，后 1h
 啥也不会，开始狂吃，并感觉两部分时间一样长。</p>
 <details class="note default"><summary><p>更加详细的赛时情况</p>
 </summary>
 <p>最开始先读了一遍题，由于 T2 题目太长不是很好理解，并且 T3 的 <span
-class="math inline">2 × 10<sup>6</sup></span>
-次操作和一次操作可以更改多个 <span class="math inline"><em>a</em></span>
+class="math inline">\(2 \times 10^6\)</span>
+次操作和一次操作可以更改多个 <span class="math inline">\(a\)</span>
 值看起来很吓人，所以认为 T1 是最简单的。</p>
 <p>随后想了一个 25pts 做法并在第 40min 写完。</p>
-<p>想到构造序列，用 <span class="math inline">$O(\sqrt{n})$</span>
-的长度覆盖 <span class="math inline">1, 2, ⋯, <em>n</em> − 1</span>
-的所有差值，尝试序列 <span
-class="math inline">1, 3, 6, 10, 15, ⋯</span>，有问题。然后想到 <span
-class="math inline">$1, 2, \cdots, \sqrt{n}, 2\sqrt{n}, \cdots,
-n$</span>，没什么问题。</p>
+<p>想到构造序列，用 <span class="math inline">\(O(\sqrt{n})\)</span>
+的长度覆盖 <span class="math inline">\(1, 2, \cdots, n - 1\)</span>
+的所有差值，尝试序列 <span class="math inline">\(1, 3, 6, 10, 15,
+\cdots\)</span>，有问题。然后想到 <span class="math inline">\(1, 2,
+\cdots, \sqrt{n}, 2\sqrt{n}, \cdots, n\)</span>，没什么问题。</p>
 <p>尝试在这个做法外面套一个二分做到 <span
-class="math inline">$O(\sqrt{n}\log{n})$</span>，这个东西刚好卡进 <span
-class="math inline">10<sup>6</sup></span>，预计得分
+class="math inline">\(O(\sqrt{n}\log{n})\)</span>，这个东西刚好卡进
+<span class="math inline">\(10^6\)</span>，预计得分
 28pts，感觉写了会很亏，于是继续想。</p>
-<p>想到自己可以不用覆盖 <span
-class="math inline">1, 2, ⋯, <em>m</em><em>i</em><em>d</em></span>，只需要覆盖
-<span
-class="math inline"><em>l</em> + 1, <em>l</em> + 2, ⋯, <em>m</em><em>i</em><em>d</em></span>，于是变成了约
-<span class="math inline">1.5 × 10<sup>5</sup></span>
-次询问，78pts。</p>
-<p>想 T2，先写了 <span class="math inline"><em>m</em> = 2</span> 和
-<span
-class="math inline"><em>e</em> &gt; <em>m</em></span>，12pts，<span
-class="math inline"><em>e</em> = <em>m</em> − 1</span>
-没什么思路，去写了一个 T3 的 <span
-class="math inline"><em>n</em> = 2</span>，目前得分 <span
-class="math inline">78 + 12 + 5 = 95</span>。</p>
-<p>想到了 T2 这个拆环、并环的过程，写出了 <span
-class="math inline"><em>e</em> = <em>m</em> − 1</span>，猜测 T3 是配对
-<span class="math inline">$\lfloor\frac{n}{2}\rfloor$</span>
-对达到最优效率，于是写了 <span
-class="math inline">1 ≤ <em>a</em><sub><em>i</em></sub> ≤ 25000</span>，此时已经过去
-4h。</p>
+<p>想到自己可以不用覆盖 <span class="math inline">\(1, 2, \cdots,
+mid\)</span>，只需要覆盖 <span class="math inline">\(l + 1, l + 2,
+\cdots, mid\)</span>，于是变成了约 <span class="math inline">\(1.5
+\times 10^5\)</span> 次询问，78pts。</p>
+<p>想 T2，先写了 <span class="math inline">\(m = 2\)</span> 和 <span
+class="math inline">\(e &gt; m\)</span>，12pts，<span
+class="math inline">\(e = m - 1\)</span> 没什么思路，去写了一个 T3 的
+<span class="math inline">\(n = 2\)</span>，目前得分 <span
+class="math inline">\(78 + 12 + 5 = 95\)</span>。</p>
+<p>想到了 T2 这个拆环、并环的过程，写出了 <span class="math inline">\(e
+= m - 1\)</span>，猜测 T3 是配对 <span
+class="math inline">\(\lfloor\frac{n}{2}\rfloor\)</span>
+对达到最优效率，于是写了 <span class="math inline">\(1 \le a_i \le
+25000\)</span>，此时已经过去 4h。</p>
 <p>继续思考如何优化
 T1，想到哈希冲突的具体次数还没用上，一直在尝试利用这个信息。</p>
 <p>写了一个利用信息每次将二分区间缩小 <span
-class="math inline">$\frac{3}{2}$</span> 的做法，WA
+class="math inline">\(\frac{3}{2}\)</span> 的做法，WA
 了，感觉这个缩小有问题，把缩小条件改严格一点，没 WA 但询问次数达到 <span
-class="math inline">1.9 × 10<sup>5</sup></span>，不如直接二分优。</p>
-<p>比赛结束时为 <span class="math inline">78 + 22 + 16</span>。</p>
+class="math inline">\(1.9 \times 10^5\)</span>，不如直接二分优。</p>
+<p>比赛结束时为 <span class="math inline">\(78+22+16\)</span>。</p>
 
 </details>
 <details class="note default"><summary><p>一些想法</p>
 </summary>
-<p>T2 的 <span class="math inline"><em>e</em> = <em>m</em> = 3</span> 和
-T3 正解没打出来很可惜，“因为我觉得 T1 是最简单的，所以就在 T1
+<p>T2 的 <span class="math inline">\(e = m = 3\)</span> 和 T3
+正解没打出来很可惜，“因为我觉得 T1 是最简单的，所以就在 T1
 拿了很多分”很神奇。</p>
 <p>可能都是因为难度排序的比赛打多了，更习惯先做 T1 吧。</p>
 
