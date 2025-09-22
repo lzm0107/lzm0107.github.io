@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 8.0.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"lzm0107.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.25.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="Day -1 (5.15) 今天考语文。 但我跑路了。 上飞机前从电脑往手机里传了十几首歌，准备在飞机上听，然后发现自己没带耳机。还好我还传了一部小说过去，感觉几个小时应该读不完二十万字。 在小说里发现了字符串“文化课”，有点害怕。 离降落还有半个多小时的时候广播说机场要求关上遮光板，到机场不准拍照。关了遮光板后还关灯，于是开始聚精会神地睡觉。 坐了很久的大巴到学校。在报道处看见了一张地图，上面似">
+<meta property="og:type" content="article">
+<meta property="og:title" content="APIO 2025 游记">
+<meta property="og:url" content="https://lzm0107.github.io/2025/05/15/APIO2025/index.html">
+<meta property="og:site_name" content="lzm0107 的博客">
+<meta property="og:description" content="Day -1 (5.15) 今天考语文。 但我跑路了。 上飞机前从电脑往手机里传了十几首歌，准备在飞机上听，然后发现自己没带耳机。还好我还传了一部小说过去，感觉几个小时应该读不完二十万字。 在小说里发现了字符串“文化课”，有点害怕。 离降落还有半个多小时的时候广播说机场要求关上遮光板，到机场不准拍照。关了遮光板后还关灯，于是开始聚精会神地睡觉。 坐了很久的大巴到学校。在报道处看见了一张地图，上面似">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-05-15T06:26:36.000Z">
+<meta property="article:modified_time" content="2025-07-16T08:30:22.014Z">
+<meta property="article:author" content="lzm0107">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://lzm0107.github.io/2025/05/15/APIO2025/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://lzm0107.github.io/2025/05/15/APIO2025/","path":"2025/05/15/APIO2025/","title":"APIO 2025 游记"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>APIO 2025 游记 | lzm0107 的博客</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">lzm0107 的博客</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#day--1-5.15"><span class="nav-number">1.</span> <span class="nav-text">Day -1 (5.15)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#day-0"><span class="nav-number">2.</span> <span class="nav-text">Day 0</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#day-1"><span class="nav-number">3.</span> <span class="nav-text">Day 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#day-2"><span class="nav-number">4.</span> <span class="nav-text">Day 2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#day-3"><span class="nav-number">5.</span> <span class="nav-text">Day 3</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="lzm0107"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">lzm0107</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/lzm0107" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;lzm0107" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:lzm_555994.outlook.com" title="E-Mail → mailto:lzm_555994.outlook.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lzm0107.github.io/2025/05/15/APIO2025/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="lzm0107">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lzm0107 的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="APIO 2025 游记 | lzm0107 的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          APIO 2025 游记
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-05-15 14:26:36" itemprop="dateCreated datePublished" datetime="2025-05-15T14:26:36+08:00">2025-05-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-07-16 16:30:22" itemprop="dateModified" datetime="2025-07-16T16:30:22+08:00">2025-07-16</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h3 id="day--1-5.15">Day -1 (5.15)</h3>
+<p>今天考语文。</p>
+<p>但我跑路了。</p>
+<p>上飞机前从电脑往手机里传了十几首歌，准备在飞机上听，然后发现自己没带耳机。还好我还传了一部小说过去，感觉几个小时应该读不完二十万字。</p>
+<p>在小说里发现了字符串“文化课”，有点害怕。</p>
+<p>离降落还有半个多小时的时候广播说机场要求关上遮光板，到机场不准拍照。关了遮光板后还关灯，于是开始聚精会神地睡觉。</p>
+<p>坐了很久的大巴到学校。在报道处看见了一张地图，上面似乎是他们学校某届毕业生的去向，有意思的是北京的位置写了“北京大学
+11 人，清华大学 2 人”。</p>
+<p>发了一件衣服和一个包，包里有各种奇奇怪怪的东西，感觉有用的也就一支笔和一个
+U 盘了。</p>
+<p>到了宿舍打开随身 WIFI，-90 dBm 还是能用的。</p>
+<p>试机，写个 assign 还 WA 了，调了半小时。</p>
+<h3 id="day-0">Day 0</h3>
+<p>昨晚没睡好啊，床上有点太热了。</p>
+<p>听课，好难啊听不懂。</p>
+<p>开幕式氛围感很强。</p>
+<h3 id="day-1">Day 1</h3>
+<p>空调开到 22 度，睡眠质量显著提高。</p>
+<p>入场，发现发了好多好吃的。</p>
+<p>前 4h 打了 <span class="math inline">78 + 22 + 16</span>，后 1h
+啥也不会，开始狂吃，并感觉两部分时间一样长。</p>
+<details class="note default"><summary><p>更加详细的赛时情况</p>
+</summary>
+<p>最开始先读了一遍题，由于 T2 题目太长不是很好理解，并且 T3 的 <span
+class="math inline">2 × 10<sup>6</sup></span>
+次操作和一次操作可以更改多个 <span class="math inline"><em>a</em></span>
+值看起来很吓人，所以认为 T1 是最简单的。</p>
+<p>随后想了一个 25pts 做法并在第 40min 写完。</p>
+<p>想到构造序列，用 <span class="math inline">$O(\sqrt{n})$</span>
+的长度覆盖 <span class="math inline">1, 2, ⋯, <em>n</em> − 1</span>
+的所有差值，尝试序列 <span
+class="math inline">1, 3, 6, 10, 15, ⋯</span>，有问题。然后想到 <span
+class="math inline">$1, 2, \cdots, \sqrt{n}, 2\sqrt{n}, \cdots,
+n$</span>，没什么问题。</p>
+<p>尝试在这个做法外面套一个二分做到 <span
+class="math inline">$O(\sqrt{n}\log{n})$</span>，这个东西刚好卡进 <span
+class="math inline">10<sup>6</sup></span>，预计得分
+28pts，感觉写了会很亏，于是继续想。</p>
+<p>想到自己可以不用覆盖 <span
+class="math inline">1, 2, ⋯, <em>m</em><em>i</em><em>d</em></span>，只需要覆盖
+<span
+class="math inline"><em>l</em> + 1, <em>l</em> + 2, ⋯, <em>m</em><em>i</em><em>d</em></span>，于是变成了约
+<span class="math inline">1.5 × 10<sup>5</sup></span>
+次询问，78pts。</p>
+<p>想 T2，先写了 <span class="math inline"><em>m</em> = 2</span> 和
+<span
+class="math inline"><em>e</em> &gt; <em>m</em></span>，12pts，<span
+class="math inline"><em>e</em> = <em>m</em> − 1</span>
+没什么思路，去写了一个 T3 的 <span
+class="math inline"><em>n</em> = 2</span>，目前得分 <span
+class="math inline">78 + 12 + 5 = 95</span>。</p>
+<p>想到了 T2 这个拆环、并环的过程，写出了 <span
+class="math inline"><em>e</em> = <em>m</em> − 1</span>，猜测 T3 是配对
+<span class="math inline">$\lfloor\frac{n}{2}\rfloor$</span>
+对达到最优效率，于是写了 <span
+class="math inline">1 ≤ <em>a</em><sub><em>i</em></sub> ≤ 25000</span>，此时已经过去
+4h。</p>
+<p>继续思考如何优化
+T1，想到哈希冲突的具体次数还没用上，一直在尝试利用这个信息。</p>
+<p>写了一个利用信息每次将二分区间缩小 <span
+class="math inline">$\frac{3}{2}$</span> 的做法，WA
+了，感觉这个缩小有问题，把缩小条件改严格一点，没 WA 但询问次数达到 <span
+class="math inline">1.9 × 10<sup>5</sup></span>，不如直接二分优。</p>
+<p>比赛结束时为 <span class="math inline">78 + 22 + 16</span>。</p>
+
+</details>
+<details class="note default"><summary><p>一些想法</p>
+</summary>
+<p>T2 的 <span class="math inline"><em>e</em> = <em>m</em> = 3</span> 和
+T3 正解没打出来很可惜，“因为我觉得 T1 是最简单的，所以就在 T1
+拿了很多分”很神奇。</p>
+<p>可能都是因为难度排序的比赛打多了，更习惯先做 T1 吧。</p>
+
+</details>
+<p>出来怎么听说 T3 比 T1 简单啊？</p>
+<p>听讲题，听完 T3 上去讲了一下自己的悲惨经历（sub2 check）。</p>
+<p>发现自己场上发明了 BSGS。</p>
+<p>T2 太震撼了！</p>
+<h3 id="day-2">Day 2</h3>
+<p>不懂这个社会实践在干什么。</p>
+<p>颁奖，现在全世界都要知道我铜牌了。</p>
+<p>“结束了，孩子们”。</p>
+<h3 id="day-3">Day 3</h3>
+<p>还能写 Day 3 我是没想到的。</p>
+<p>飞回 CQ，但发现自己被迫爆照了。</p>
+<p><a
+target="_blank" rel="noopener" href="https://live.photoplus.cn/live/pc/98845885/#/live">link</a></p>
+<p>我就是那个穿着黄白衣服被拍了四张的，这里就不放了。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/02/28/%E8%81%94%E5%90%88%E7%9C%81%E9%80%892025/" rel="prev" title="联合省选 2025 游记">
+                  <i class="fa fa-angle-left"></i> 联合省选 2025 游记
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2025/07/16/20250701/" rel="next" title="并非 NOI 2025 游记">
+                  并非 NOI 2025 游记 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  
+  <div class="comments giscus-container">
+  </div>
+  
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">lzm0107</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+<script class="next-config" data-name="giscus" type="application/json">{"enable":true,"repo":"lzm0107/blog-giscus","repo_id":"R_kgDOM1oXFQ","category":"Announcements","category_id":"DIC_kwDOM1oXFc4CistX","mapping":"pathname","strict":0,"reactions_enabled":1,"emit_metadata":1,"theme":"preferred_color_scheme","lang":"zh-CN","crossorigin":"anonymous","input_position":"top","loading":"lazy"}</script>
+
+<script>
+document.addEventListener('page:loaded', () => {
+  if (!CONFIG.page.comments) return;
+
+  NexT.utils.loadComments('.giscus-container')
+    .then(() => NexT.utils.getScript('https://giscus.app/client.js', {
+      attributes: {
+        async                   : true,
+        crossOrigin             : 'anonymous',
+        'data-repo'             : CONFIG.giscus.repo,
+        'data-repo-id'          : CONFIG.giscus.repo_id,
+        'data-category'         : CONFIG.giscus.category,
+        'data-category-id'      : CONFIG.giscus.category_id,
+        'data-mapping'          : CONFIG.giscus.mapping,
+        'data-strict'           : CONFIG.giscus.strict,
+        'data-reactions-enabled': CONFIG.giscus.reactions_enabled,
+        'data-emit-metadata'    : CONFIG.giscus.emit_metadata,
+        'data-theme'            : CONFIG.giscus.theme,
+        'data-lang'             : CONFIG.giscus.lang,
+        'data-input-position'   : CONFIG.giscus.input_position,
+        'data-loading'          : CONFIG.giscus.loading
+      },
+      parentNode: document.querySelector('.giscus-container')
+    }));
+});
+</script>
+
+</body>
+</html>
