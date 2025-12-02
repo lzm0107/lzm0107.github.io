@@ -143,7 +143,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -169,6 +169,159 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://lzm0107.github.io/2025/12/02/NOIP2025/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="lzm0107">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lzm0107 的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | lzm0107 的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/12/02/NOIP2025/" class="post-title-link" itemprop="url">NOIP2025</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2025-12-02 13:58:25 / 修改时间：14:04:48" itemprop="dateCreated datePublished" datetime="2025-12-02T13:58:25+08:00">2025-12-02</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="day-1-11.29">Day 1 (11.29)</h2>
+<p>A 秒了。</p>
+<p>阅读 B 题题面（包含样例解释）。</p>
+<details class="note default"><summary><p>思考过程</p>
+</summary>
+<p>认为需要分析在何种定价方案下，贪心策略是最优的，何种情况下不是。[^1]</p>
+<p>考虑如何解决固定定价方案时，求最大原价的选择方案的问题，相当于两种
+<span class="math inline">\(w\)</span>
+各自排序后每次决策从哪堆中买。</p>
+<p>当 <span class="math inline">\(w_i = 2\)</span>
+的第一个待选物品的性价比大于等于 <span class="math inline">\(w_i =
+1\)</span> 的第一个待选物品的性价比时，选 <span
+class="math inline">\(w_i = 2\)</span>
+的物品一定是不劣的，即贪心策略在此时是正确的。</p>
+<p>所以贪心策略出的错误只能是“在应当买 <span class="math inline">\(w_i =
+2\)</span> 的物品时被第一个 <span class="math inline">\(w_i = 1\)</span>
+的物品的高性价比诱骗了，被迫一起买下低性价比的第二个 <span
+class="math inline">\(w_i = 1\)</span> 的物品，或发现后面没有第二个
+<span class="math inline">\(w_i = 1\)</span>
+的物品但自己还有一块钱没花出去。”</p>
+<p>贪心策略在这里显然会被骗至多一次，因为后面的 <span
+class="math inline">\(w_i = 1\)</span>
+的物品的性价比会比第二个更低，此时没有高性价比的诱饵了。</p>
+<p>接下来思考枚举几个关键位置后组合计数。考虑了几个位置，并思考如何确保“贪心策略一定会选成这样”，然后一直无法保证贪心策略会选最后一个
+<span class="math inline">\(w_i = 2\)</span> 的而不是去选下一个 <span
+class="math inline">\(w_i = 1\)</span> 的。</p>
+
+</details>
+<p>9:10，感觉组合计数没有前途，去想怎么做 DP 了。</p>
+<p>定下策略“9:30 没进展就打暴力跑路。”在 9:30 左右看了 C、D
+题后感觉非常困难回来继续思考 B 题，将时限延至 10:00。</p>
+<p>约 9:40，回看组合计数思路。</p>
+<details class="note default"><summary><p>思考过程</p>
+</summary>
+<p>发现“贪心策略选择钦定的最后一个 <span class="math inline">\(w_i =
+2\)</span> 的物品”是必然成立的。于是在此基础上继续考虑。</p>
+<p>想到了可以枚举第一个未选的 <span class="math inline">\(w_i =
+2\)</span> 的物品，记为 <span
+class="math inline">\(x\)</span>，和倒数第二个选择的 <span
+class="math inline">\(w_i = 1\)</span> 的物品，记为 <span
+class="math inline">\(y\)</span>。将最后一个选择的 <span
+class="math inline">\(w_i = 1\)</span> 的物品记为 <span
+class="math inline">\(z\)</span>，则需要满足的条件如下。</p>
+<ul>
+<li><span class="math inline">\(a_y + a_z &lt; a_x\)</span></li>
+<li><span class="math inline">\(2a_y &gt; a_x\)</span></li>
+</ul>
+<p>考虑其他物品会不会被购买。分段考虑，<span class="math inline">\(i&lt;
+x\)</span> 的 <span class="math inline">\(i\)</span> 无论其 <span
+class="math inline">\(w\)</span> 如何一定会被购买；<span
+class="math inline">\(x &lt; i &lt; y\)</span> 的 <span
+class="math inline">\(i\)</span> 仅当 <span class="math inline">\(w_i =
+1\)</span> 时会被购买；<span class="math inline">\(y &lt; i &lt;
+z\)</span> 的 <span class="math inline">\(i\)</span> 必须满足 <span
+class="math inline">\(w_i = 2\)</span>（否则 <span
+class="math inline">\(i\)</span> 会被购买，不满足“<span
+class="math inline">\(y\)</span> 是倒数第二个被选择的 <span
+class="math inline">\(w_i = 1\)</span>
+的物品”的要求），且一定不会没购买；<span class="math inline">\(z &lt;
+i\)</span> 的 <span class="math inline">\(i\)</span>
+一定不会被购买。</p>
+<p>那么总共花费为 <span class="math inline">\(2 + \sum_{i=1}^{x-1}1 +
+[w_i = 2] + \sum_{i=x+1}^{y-1}[w_i = 1]\)</span>，即要求 <span
+class="math inline">\(\sum_{i=1}^{x-1}[w_i = 2] + \sum_{i=x+1}^{y-1}[w_i
+= 1] = m - x - 1\)</span>。</p>
+<p>这个东西是简单的，相当于 <span class="math inline">\(x - 1\)</span>
+和 <span class="math inline">\(y - x - 1\)</span> 中共选 <span
+class="math inline">\(m - x - 1\)</span> 个翻转，方案数为 <span
+class="math inline">\({ {y - 2}\choose{m - x - 1} }\cdot 2^{n -
+z}\)</span>。</p>
+<p>对于确定的 <span class="math inline">\(x, y\)</span>，满足条件的
+<span class="math inline">\(z\)</span> 是一个后缀，<span
+class="math inline">\(\sum 2^{n-z}\)</span> 可以 <span
+class="math inline">\(O(1)\)</span> 计算。</p>
+<p>再算一下将所有 <span class="math inline">\(w_i = 1\)</span>
+的物品选完后还剩一块钱花不出去的情况，做完了。</p>
+
+</details>
+<p>写错了两个东西，一直调到 10:40。</p>
+<p>看 C 题，有一种和一个月前的 D
+题一样的感觉——编不出半个复杂度优于指数的做法。</p>
+<p>看 D 题，这个 ABCDE 性质一看就能拼很多分，开拼。</p>
+<p>最后拼了 C 的前两个点，D 的前三个点和 AB 性质。</p>
+<p>估分 <span class="math inline">\(100+100+8+40=248\)</span>。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -214,7 +367,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-11-06 13:38:22" itemprop="dateModified" datetime="2025-11-06T13:38:22+08:00">2025-11-06</time>
+      <time title="修改时间：2025-12-02 13:59:33" itemprop="dateModified" datetime="2025-12-02T13:59:33+08:00">2025-12-02</time>
     </span>
 
   
@@ -409,7 +562,7 @@ class="math inline">\(O(L_1\Sigma)\)</span>，上 QQ 询问【a】他的 C
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-11-02 11:56:15" itemprop="dateModified" datetime="2025-11-02T11:56:15+08:00">2025-11-02</time>
+      <time title="修改时间：2025-12-02 13:59:29" itemprop="dateModified" datetime="2025-12-02T13:59:29+08:00">2025-12-02</time>
     </span>
 
   
